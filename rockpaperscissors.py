@@ -11,7 +11,20 @@ Score_player = 0
 score_computer = 0
 
 def rematch():
+    global Score_player
+    global score_computer
     rmatch = input('Do you want a rematch? (Reply with yes or no)')
+    if rmatch.lower() == 'yes':
+        print('<====================REMATCH=======================>')
+        game()
+    elif rmatch.lower() == 'no':
+        print('<====================New Game======================>')
+        Score_player = 0
+        score_computer = 0
+        game()
+    else:
+        print('Error!, Please chose from any one options')
+        
     
 def game():
     global Score_player
@@ -27,6 +40,7 @@ def game():
     else:
         score_computer += 1
         print('Mayday! Current game score = ',Score_player ,'/',score_computer )
+    rematch()
         
         
 
