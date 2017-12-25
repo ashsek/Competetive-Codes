@@ -28,6 +28,7 @@ def rematch():
             print(' Thanks for playing ! Have a nice day :)')
     else:
         print('Error!, Please chose from any one options')
+        rematch()
         
     
 def game():
