@@ -1,4 +1,4 @@
-memo = {}
+tmemo = {}
 
 def maxdollars(x):
     global memo
