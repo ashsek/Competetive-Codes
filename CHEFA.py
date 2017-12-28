@@ -33,15 +33,11 @@ Output:
 for i in range(int(input())):
     j = input()
     k = list(map(int,input().split()))
+    k.sort(reverse=True)
     chef = 0
-    other = 0
-    chance = 0
-    while len(k) > 0:
-        if chance%2 == 0:
-            chef += max(k)
-            k.remove(max(k))
-        else:
-            other += max(k)
-            k.remove(max(k))
-        chance += 1
+    i = 0
+    while i < len(k):
+        chef += k[i]
+        i += 2
+        
     print(chef)
