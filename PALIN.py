@@ -4,8 +4,23 @@
 Created on Tue Dec 26 19:54:09 2017
 
 @author: ashwin
-"""
 
+Input
+The first line contains integer t, the number of test cases. Followed by t lines containing integers K.
+
+Output
+For each K, output the smallest palindrome larger than K.
+
+Example
+Input:
+2
+808
+2133
+Output:
+818
+2222
+"""
+# Does not work currently 
 def palin(x):
     x = str(x)
     l = len(x)

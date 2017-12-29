@@ -35,7 +35,7 @@ Output:
 l=int(input())
 while l:
     l -= 1
-    exp = input()
+    exp = list(input())
     k = n = 0
     for i in range(len(exp)):
         if exp[i] == "<":
