@@ -20,19 +20,30 @@ Output:
 818
 2222
 """
-# Does not work currently 
+# Does work currently 
 def palin(x):
     x = str(x)
-    l = len(x)
-    list1 = list(x)
-    i = 0
-    while i < l//2:
-        if list1[i] != list1[l-i-1]:
-            list1[l-i-1] = list1[i]
-        i += 1
+#    l = len(x)
+    y = list(x)
+    list1 = y
+#    i = 0
+#    while i < l//2:
+#        list1[l-i-1] = list1[i]
+#        i += 1
+    if len(y)%2 == 0:
+        list1 = y[:len(y)//2] + list(reversed(y[:len(y)//2]))
+    else:
+        list1 = y[:len(y)//2+1] + list(reversed(y[:len(y)//2]))
     str1 = int(''.join(list1))
+#    print('hi',str1)
+    if str1 == int(x):
+        print(str1 + 10**((len(x)-1)//2))
     if str1 > int(x):
         print(str1)
-        return str1
-    else:
-        palin(x + str(10**len(str(x))))
+    elif str1 < int(x):
+        palin(str1 + int(10**((len(x)-1)//2+1)))
+   #     palin(x + str(10**len(str(x))))
+#        print('yo',str1)
+   
+for i in range(int(input())):
+    palin(input())
