@@ -4,6 +4,10 @@
 Created on Fri Jan  5 16:19:11 2018
 
 @author: ashwin
+You are given N integer sequences A1, A2, ..., AN. 
+Each of these sequences contains N elements. You should pick N elements, 
+one from each sequence; let's denote the element picked from sequence Ai by Ei.
+ For each i (2 ≤ i ≤ N), Ei should be strictly greater than Ei-1.
  Ei should be strictly greater than Ei-1.
 
 Compute the maximum possible value of E1 + E2 + ... + EN.
@@ -41,11 +45,33 @@ Output:
 
 18
 """
-l = []
-for i in range(int(input())):
-    for i in range(int(input())):
-        l.append(max(list(map(int,input().split()))))
-    print(sum(l))
+import sys
+sys.setrecursionlimit(90000000)
+
+def maf(li):
+    lj = li[:]
+    for i in range(len(li)):
+        u = max(lj[i])
+        ma_x[i] = u
+        lj[i].remove(u)
+        if i > 0 and  ma_x[i] <= ma_x[i-1]:
+            maf(lj)
+        if len(lj[0]) == 0:
+   #         print(ma_x)
+            return -1
+ #   print(ma_x)
+    return sum(ma_x)
+            
+    
+for o in range(int(input())):
+    n = int(input())
+    l = []
+    ma_x = [0]*n
+    for j in range(n):
+        l.append(list(map(int,input().split())))
+    print(maf(l))
+
+        
         
 
 
