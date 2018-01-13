@@ -44,33 +44,58 @@ Input:
 Output:
 
 18
-"""
-import sys
-sys.setrecursionlimit(90000000)
 
+
+1 3 5
+
+1 2 4
+
+3 1 0
+
+
+"""
 def maf(li):
-    lj = li[:]
-    for i in range(len(li)):
-        u = max(lj[i])
-        ma_x[i] = u
-        lj[i].remove(u)
-        if i > 0 and  ma_x[i] <= ma_x[i-1]:
-            maf(lj)
-        if len(lj[0]) == 0:
-   #         print(ma_x)
-            return -1
- #   print(ma_x)
-    return sum(ma_x)
+    k = len(li)
+    p = 0
+    q = 1
+    y = True
+    l = []
             
+    while y: 
+        
+        while li[p][0] >= li[p+q][0] and p < k-1:        
+            li[p].remove(li[p][0])
+            if len(li[p]) == 0:
+                return -1
+            if p+q < len(li[p]):
+                q += 1
+        
+        for o in range(k):
+            ma_x[o] = li[o][0]
+            
+        l = ma_x[:]
+        l.sort()
+        if ma_x == l:
+            break
+        
+        else:
+            if p +1 <= len(li[p]):
+                p += 1
+                q = 0     
     
+#    print(ma_x)
+    return sum(ma_x)
+  
 for o in range(int(input())):
     n = int(input())
     l = []
     ma_x = [0]*n
     for j in range(n):
-        l.append(list(map(int,input().split())))
+        y = list(map(int,input().split()))
+        y.sort(reverse = True)
+        l.append(y)
     print(maf(l))
-
+#BufferError,LookupError,EOFError,AttributeError
         
         
 
