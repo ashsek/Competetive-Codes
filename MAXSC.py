@@ -54,7 +54,48 @@ Output:
 
 
 """
-def maf(li):
+#def maf(li):
+#    k = len(li)
+#    p = 0
+#    q = 1
+#    y = True
+#    l = []
+#            
+#    while y: 
+#        
+#        while li[p][0] >= li[p+q][0] and p < k-1:        
+#            li[p].remove(li[p][0])
+#            if len(li[p]) == 0:
+#                return -1
+#            if p+q < len(li[p]):
+#                q += 1
+#        
+#        for o in range(k):
+#            ma_x[o] = li[o][0]
+#            
+#        l = ma_x[:]
+#        l.sort()
+#        if ma_x == l:
+#            break
+#        
+#        else:
+#            if p +1 <= len(li[p]):
+#                p += 1
+#                q = 0     
+#    
+##    print(ma_x)
+#    return sum(ma_x)
+  
+for o in range(int(input())):
+    n = int(input())
+    li = []
+    ma_x = [0]*n
+    for j in range(n):
+        y = list(map(int,input().split()))
+        y.sort(reverse = True)
+        li.append(y)
+#    print(maf(l))
+#BufferError,LookupError,EOFError,AttributeError
     k = len(li)
     p = 0
     q = 1
@@ -66,7 +107,7 @@ def maf(li):
         while li[p][0] >= li[p+q][0] and p < k-1:        
             li[p].remove(li[p][0])
             if len(li[p]) == 0:
-                return -1
+                print( -1)
             if p+q < len(li[p]):
                 q += 1
         
@@ -84,18 +125,7 @@ def maf(li):
                 q = 0     
     
 #    print(ma_x)
-    return sum(ma_x)
-  
-for o in range(int(input())):
-    n = int(input())
-    l = []
-    ma_x = [0]*n
-    for j in range(n):
-        y = list(map(int,input().split()))
-        y.sort(reverse = True)
-        l.append(y)
-    print(maf(l))
-#BufferError,LookupError,EOFError,AttributeError
+    print(sum(ma_x))
         
         
 
