@@ -37,7 +37,7 @@ Sample Output :
 0
 1
 0
-2
+2v
 1
 """
 
@@ -56,6 +56,6 @@ for i in range(q):
         #do something
         for m in range(k,l+1):
             if c[m] == 1:
-                c[m] == 0
+                c[m] = 0
             else:
-                c[m] == 1
+                c[m] = 1
