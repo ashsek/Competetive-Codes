@@ -3,8 +3,9 @@ for i in range(int(input())):
 	n,k = list(map(int,input().split()))
 	l = list(map(int,input().split()))
 	l.sort(reverse = True)
+	s = sum(l)
 	for j in l:
-		if j + k > sum(l) - j:
+		if j + k >  s - j:
 			o += 1
 		else:
 			break
