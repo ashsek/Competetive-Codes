@@ -1,11 +1,10 @@
 for o in range(int(input())):
-	m,n = input().split()
-	m,n = int(m),int(n)
+	m,n = list(map(int,input().split()))
 	a = list(map(int,input().split()))
 	b = list(map(int,input().split()))
 	result = 0
-	for i in range(m):
-		for j in range(m):
+	l1 = range(m)
+	for i,j in zip(l1,l1):
 			fib = {}
 			fib[0] = a[i]
 			fib[1] = b[j]
