@@ -1,0 +1,44 @@
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+//#include "stdbool.h"
+#define MaxM 1000000007
+#define pi 3.14159265359
+#define R 50
+
+using namespace std;
+int main(){
+	int T,x,y;
+	double p,r2,r,theta,thetan;
+	cin>>T;
+	for(int t=0;t<T ; ++t){
+		cin>>p>>x>>y;
+		x=x-R;
+		y=y-R;
+		theta = (2*pi*p)/100;
+		r2 = (x*x+y*y);
+		r=sqrt(r2);
+		if(x==0&&y==0){
+			if(p>0)thetan=0;
+		}
+		else if(x>=0&&y>=0){
+			thetan = asin((double)x/r);
+		}
+		else if(x>=0&&y<=0){
+			thetan = acos((double)x/r)+(pi/2);
+		}
+		else if(x<=0&&y<=0){
+			thetan = asin((double)(-1*x)/r) + pi;
+		}
+		else if(x<=0&&y>=0){
+			thetan = asin((double)y/r)+((3*pi)/2);
+		}
+		//cout<<"p: "<<p<<" r: "<<r<<" thetan: "<<thetan<<" theta: "<<theta<<endl;
+		if(r>R) cout<<"Case #"<<(t+1)<<": white\n";
+		else if (thetan<theta){
+			cout<<"Case #"<<(t+1)<<": black\n";
+		}
+		else cout<<"Case #"<<(t+1)<<": white\n";
+	}
+	return 0;
+}

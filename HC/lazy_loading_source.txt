@@ -1,0 +1,36 @@
+#include <iostream>
+#include <algorithm>
+//#include <stdlib.h>
+//#include <math.h>
+//#include "stdbool.h"
+#define R 50
+#define MaxM 1000000007
+using namespace std;
+int main(){
+	int ar[110],T,n,nb,count,sum;
+	
+	cin>>T;
+	for(int t=0;t<T;++t){
+		count = 0;
+		cin>>n;
+		for(int i =0; i<n; ++i)cin>>ar[i];
+		sort(ar,ar+n,std::greater<int>());
+		//for(int i =0; i<n; ++i)cout<<ar[i]<<" ";
+		//cout<<endl;
+		for(int i = 0, j = n-1; (i<n)&&(j>=i) ; ++i){
+			if(j==i&&(ar[i]<R))break;
+			if(R%ar[i]==0)nb=(R/ar[i]);
+			else nb = (R/ar[i])+1;
+			sum = ar[i];
+			while(j>i&&(--nb)){
+				sum +=sum;
+				--j;
+			}
+			if(sum<R)break;
+			++count;
+			//j = j-nb+1;
+		}
+		cout<<"Case #"<<(t+1)<<": "<<count<<endl;
+	}
+	return 0;
+}
