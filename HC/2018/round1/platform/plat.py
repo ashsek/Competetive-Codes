@@ -18,11 +18,15 @@ for t in range(int(input())):
 	H[0] = h1
 	H[1] = h2
 	for i in range(2,n):
-		H[i] = (w*H[i-2] + x*H[i-1] + Y)%Z
+		H[i] = (w*H[i-2] + x*H[i-1] + y)%z
 	for j in range(m):
 		a,b,u,d = list(map(int,input().split()))
 		A.append(a)
 		B.append(b)
 		U.append(u)
 		D.append(d)
-
+	print('H:',H)
+	print('A:', A)
+	print('B:',B)
+	print('U:',U)
+	print('D:',D)
