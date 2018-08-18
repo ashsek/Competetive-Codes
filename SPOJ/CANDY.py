@@ -5,7 +5,6 @@ while True:
 		l = []
 		for _ in range(j):
 			l.append(int(input()))
-		#print(l)
 		s = sum(l)
 		if s % j != 0:
 			print(-1)
@@ -16,6 +15,5 @@ while True:
 				if o < y:
 					q += y-o
 			print(q)
-
 	except:
 		pass
