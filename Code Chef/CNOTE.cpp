@@ -15,16 +15,16 @@ Output
 For each test case, Print "LuckyChef" if Chef can select such a notebook, otherwise print "UnluckyChef" (quotes for clarity).
  */
 int main(){
-    int t;
+    long long int t;
     cin >>t;
-    int x,y,k,n;
+    long long int x,y,k,n;
     while(t--){
         cin >> x>>y>>k>>n;
-        int leftpages;
-        int n2;
+        long long int leftpages;
+        long long int n2;
         n2 = n;
         leftpages = x-y;
-        int p[n],c[n],i=0;
+        long long int p[n],c[n],i=0;
         while(n2--){
             cin >> p[i] >> c[i];
             i += 1;
@@ -32,16 +32,16 @@ int main(){
         if(leftpages <=0 )
             cout << "LuckyChef" << '\n';
         else{
-            int pages;
+            long long int pages;
             for(i=0;i<n;i++){
                 if(p[i] >= leftpages){
                     pages = i;
                     break;
                 }
             }
-            int min = INT_MAX;
+            long long int min = INT_MAX;
             for(i=pages;i<n;i++){
-                if(c[i] <= min){
+                if(c[i] <= min && p[i] >= leftpages){
                     min = c[i];
                 }
             }
