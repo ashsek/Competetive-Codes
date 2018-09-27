@@ -4,6 +4,7 @@ def calculatediff(k,q):
         if k[i] != q[i]:
             s += 1
     return s
+d = {}
 for t2 in range(int(input())):
     n,m,p = list(map(int,input().split()))
     l2 = []
@@ -24,11 +25,14 @@ for t2 in range(int(input())):
         for q in s:
             t+=calculatediff(k,q)
         ans.append(t)
-        t = 0
-    print(s)
-    print("---=-=-==-=-=-")
-    print(l)
-    print("---------")
-    print(f)
+  #  print(s)
+   # print("---=-=-==-=-=-")
+  #  print(l)
+    #print("---------")
+  #  print(f)
+    #print("*****")
+  #  print(ans)
+    u = min(ans)
+    #print(u)
     #y: minimum complaints for shakti
-    print("Case #{0}: {1}".format(t2+1,min(ans)))
+    print("Case #{0}: {1}".format(t2+1,u))
