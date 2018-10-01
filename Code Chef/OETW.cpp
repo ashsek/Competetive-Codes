@@ -29,8 +29,8 @@ int main(){
 1 2 2 -> 1,2,3,4,5
 2 1 1 -> 1,2,3,4
 2 1 2 -> 1,2,5,3
-2 2 1 -> 1,2,4,5
+2 2 1 -> 1,2,3,4,5
 2 2 2 -> 2,4,6
 
-If all 2 or all 1 then it is equal to n,
+If all 2 or all 1 then it is equal to n;
 */
