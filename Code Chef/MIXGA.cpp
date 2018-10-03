@@ -1,11 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 const int MX = (1<<20);
-int n , T , K;
+int n , t , k;
 int main(){
-    cin>>T;
-    while(T--){
-        cin>>n>>K;
+    cin>>t;
+    while(t--){
+        cin>>n>>k;
         int sum = 0;
         for(int j = 1 ; j <= n ; j++){
             int x;
@@ -20,7 +20,7 @@ int main(){
                 else --sum;
             }
         }
-        if(abs(sum) >= K) puts("1");
+        if(abs(sum) >= k) puts("1");
         else puts("2");
     }
 }
