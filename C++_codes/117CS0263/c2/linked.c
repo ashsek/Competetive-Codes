@@ -43,8 +43,8 @@ int main()
 	}
 
 	//Printing Node Data.
-        struct Node* ptr3 = NULL;
-        ptr3 = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* ptr3 = NULL;
+    ptr3 = (struct Node*)malloc(sizeof(struct Node));
 	ptr3 = header;
 	printf("Linked List: \n");
 	while(ptr3!=NULL)
