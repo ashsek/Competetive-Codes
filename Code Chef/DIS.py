@@ -16,4 +16,4 @@ for _ in range(int(input())):
 			break
 	if f == 0:
 		print("Yes")
-	
+
