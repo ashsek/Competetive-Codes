@@ -10,11 +10,13 @@ int visited[N];
 void dfs(int u){
 	if (visited[u]==1) return;
 	visited[u] = 1;
-	cout << u << " -> ";
 	for(int i=0;i<V[u].size();i++){
-		// cout << V[u][i] << " ";
+		if (visited[V[u][i]] != 1){
 		dfs(V[u][i]);
+		// cout << u << '\n';
+		}
 	}
+	cout << u << ' '; 
 }
 
 int main(){
@@ -24,7 +26,7 @@ int main(){
 	for(i=0;i<m;i++){
 		cin >> x >> y;
 		V[x].push_back(y);
-		V[y].push_back(x);
+		// V[y].push_back(x);
 	}
 
 	int cc = 0;
