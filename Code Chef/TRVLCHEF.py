@@ -1,68 +1,34 @@
-def dfs(u):
-	if visited[u] == 1: return
-	visited[u] = 1
-	for j in range(1,n+1):
-		if j != u:
-			if abs(c[u-1] - c[j-1]) <= d and visited[j] != 1:
-				dfs(j)
+def left(a, pos):
+	if pos == 0 or pos == len(a) - 1:
+		return True
+	for i in range(pos + 1, len(a)):
+		if a[i] - a[i - 2] > d:
+			return False
+	return True
+
+def right(a ,pos):
+	for i in range(pos - 1, -1, -1):
+		if a[i + 2] - a[i] > d:
+			return False
+	return True
+
 
 for _ in range(int(input())):
-	n,d = list(map(int,input().split()))
-	c = list(map(int,input().split()))
-	o = c[0]
-	c.sort(reverse = True)
-	c.remove(o)
-	c2 = c[:]
-	c2.sort()
-	c2 = [o]+ c2 
-	c = [o] + c
-	# print(c)
+	n, d = map(int, input().split())
+	a = list(map(int,input().split()))
+	startVal = a[0]
+	a.sort()
 	f = 1
-	k = n
-	f2 = 1
-	while(c):
-		if k > 2:
-			if(abs(c[0]-c[1]) <= d):
-				c.pop(0)
-				k -= 1
-			else:
-				f = 0
-				break
-		else:
-			if(abs(c[0]-c[1]) <= d):
-				c.pop(0)
-				c.pop(0)
-				k -= 2
-			else:
-				f = 0
-				break
-	k = n
-	while(c2):
-		if k > 2:
-			if(abs(c2[1]-c2[0]) <= d):
-				c2.pop(0)
-				k -= 1
-			else:
-				f2 = 0
-				break
-		else:
-			if(abs(c2[1]-c2[0]) <= d):
-				c2.pop(0)
-				c2.pop(0)
-				k -= 2
-			else:
-				f2 = 0
-				break
+	startPos = 0
 
-	# visited = [-1]*(n+1)
-	# node = [[] for j in range(n+1)]
-	# dfs(1)
-	# f = 1
-	# for i in range(1,n+1):
-	# 	if visited[i] == -1:
-	# 		f = 0
-	# 		break
-	if f == 0 and f2 == 0:
-		print("NO")
-	else:
+	for i, e in enumerate(a[1: ]):
+		if e - a[i] > d:
+			f = 0
+			break
+		if e == startVal:
+			startPos = i + 1
+
+	if f and (left(a, startPos) or right(a, startPos)):
 		print("YES")
+	else:
+		print("NO")
