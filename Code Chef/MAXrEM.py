@@ -1,0 +1,7 @@
+n = int(input())
+z = list(map(int,input().split()))
+z = list(set(z))
+z.sort()
+# print(z)
+n = len(z)
+print(z[n-2]%z[n-1])
