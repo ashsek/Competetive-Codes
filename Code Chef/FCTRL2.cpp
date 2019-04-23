@@ -28,3 +28,23 @@ int main(){
     }
     return 0;
 }
+// #include <stdio.h>
+
+// int main(void) {
+// int i;
+// scanf("%d",&i);
+// while(i--)
+// {
+// int j,k;
+// scanf("%d",&j);
+// int fact=1;
+// for(k=1;k<=j;k++)
+// {
+// fact=fact*k;
+// }
+// printf("%d \n",fact);
+// }
+
+// // your code goes here
+// return 0;
+// }

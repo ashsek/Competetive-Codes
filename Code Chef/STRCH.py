@@ -43,6 +43,6 @@ for _ in range(int(input())):
 	# 	if x in j:
 	# 		# print(j)
 	# 		c += 1
-	print(c)
+	# print(c)
 	# print('---solved---')
 	print(sol(s))
