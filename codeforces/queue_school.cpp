@@ -47,8 +47,23 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+    int n,t;
+    cin >> n >> t;
+    string s;
+    cin >> s;
+    string s2;
+    while(t--){
+    	s2=s;
+    	for (int i = 0; i < s.length()-1; ++i)
+    	{
+    		if(s[i]=='B' && s[i+1] == 'G'){
 
-       
-    
+    		 swap(s2[i],s2[i+1]);
+    		 i++;
+    		}
+    	}
+    	s = s2;
+    }
+    cout << s << '\n';
     return 0;
 }

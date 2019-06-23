@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <boost/multiprecision/cpp_int.hpp>
+using boost::multiprecision::cpp_int;
 
 using namespace std;
 
@@ -46,8 +48,8 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    freopen("input.txt", "r", stdin); // redirects standard input
-	freopen("output.txt", "w", stdout); // redirects standard output
+    // freopen("input.txt", "r", stdin); // redirects standard input
+	// freopen("output.txt", "w", stdout); // redirects standard output
 
        
     

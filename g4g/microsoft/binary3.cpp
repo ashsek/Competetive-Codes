@@ -1,13 +1,15 @@
 #include <bits/stdc++.h>
-
+#include <boost/multiprecision/cpp_int.hpp>
+// using namespace std;
+using boost::multiprecision::cpp_int;
 using namespace std;
 
 #pragma GCC optimize "-O3"
 
 #define watch(x) cout << (#x) << " is " << (x) << endl
 
-#define rep(i,a,b)  for(lli i=a;i<b;i++)
-#define repd(i,a,b) for(lli i=a-1;i>=b;i--)
+#define rep(i,a,b)  for(int i=a;i<b;i++)
+#define repd(i,a,b) for(int i=a-1;i>=b;i--)
 #define nl          cout<<endl;
 #define test()      lli t;cin>>t;while(t--)
 #define sp(n)       setprecision(n)
@@ -19,10 +21,9 @@ using namespace std;
 #define S       string
 #define C       char
 #define elif    else if
-
+ 
 #define pb      push_back
 #define pp      pop_back
-#define mp      make_pair
 #define plli    pair<lli,lli>
 #define vlli    vector<lli>
 #define vulli   vector<ulli>
@@ -40,73 +41,36 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
-bool prime (lli n)
-{
-  if(n==1)
-    return false;
-
-    if(n==2||n==3)
-    return true;
-    
-    lli k=sqrt(n)+1;
-    
-    rep(i,2,k)
-    {
-        if(n%i==0)
-        return false;
-    }
-    
-    return true;
-    
-}
-
+const int N = 1e5+5;
 
 int main()
 {
-
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    //freopen("input.txt","r",stdin);
-    //freopen("output.txt","w",stdout);
-    
-     test()
-     {
-      lli d;
-      cin>>d;;
-      S s ;
-      cin>>s;
-      lli z=ceil(0.75*d);
-      // cout << z;
-      lli c=0;
-      lli p=0;
-
-      rep(i,0,d)
-      {
-        if(s[i]=='P')
-          p++;
-      }
-
-      lli mi = z-p;
-      lli mi2 = mi;
-       // cout << "   "<<z-p;
-      rep(i,2,d-2)
-      {
-        if(s[i]=='A')
+    // freopen("input.txt", "r", stdin); // redirects standard input
+    // freopen("output.txt", "w", stdout); // redirects standard 
+    int t;
+    cin >> t;
+    while(t--){
+        string s;
+        cin >> s;
+        int k = s.length();
+        cpp_int z=0;
+        for (int i = 0; i < k; ++i)
         {
-          if((s[i-1]=='P'||s[i-2]=='P')&&(s[i+1]=='P'||s[i+2]=='P'))        
-          {
-              mi2--;
-          }
+            if(s[i] == '1'){
+                // watch(z);
+                cpp_int k2 = (cpp_int) pow(2,k-i-1);
+                // watch(z);
+                // watch(k2);
+                z += k2%3;
+            }
         }
-      }
-
-      if(mi2<=0)
-        cout<< max(mi,c);
-      else cout << -1;
-      nl;;
-     }  
+        // watch(z);
+        if(z%3 == 0) cout << "1\n";
+        else cout << "0\n"; 
+    }
     
     return 0;
 }

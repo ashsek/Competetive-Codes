@@ -39,6 +39,23 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+const int N=1e5+5;
+
+vector<int> v[N];
+int visited[N];
+int n,t,flag = 0;
+void dfs(int u){
+	if (visited[u]) return;
+	visited[u] = 1;
+	if (u==t) {
+		flag =1;
+		return;
+	}
+	for (int i = 0; i < v[u].size(); ++i)
+	{
+		dfs(v[u][i]);
+	}
+}
 
 int main()
 {
@@ -47,8 +64,19 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
-       
+    cin >> n >> t;
+    int a[n-1];
+    for (int i = 0; i < n-1; ++i)
+    {
+    	cin >> a[i];
+    }
+    for (int i = 0; i < n-1; ++i)
+    {
+    	v[i+1].push_back(i+1+a[i]);
+    }
+    dfs(1);
+    if (flag) cout << "YES" << '\n';
+    else cout << "NO" << '\n';
     
     return 0;
 }

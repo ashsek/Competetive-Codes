@@ -42,22 +42,22 @@ using namespace std;
 
 bool prime (lli n)
 {
-  if(n==1)
+    if(n==1)
     return false;
 
     if(n==2||n==3)
     return true;
-    
+
     lli k=sqrt(n)+1;
-    
+
     rep(i,2,k)
     {
         if(n%i==0)
         return false;
     }
-    
+
     return true;
-    
+
 }
 
 
@@ -70,43 +70,27 @@ int main()
 
     //freopen("input.txt","r",stdin);
     //freopen("output.txt","w",stdout);
-    
-     test()
-     {
-      lli d;
-      cin>>d;;
-      S s ;
-      cin>>s;
-      lli z=ceil(0.75*d);
-      // cout << z;
-      lli c=0;
-      lli p=0;
 
-      rep(i,0,d)
-      {
-        if(s[i]=='P')
-          p++;
-      }
+    lli N=104800;
+    vlli v;
+    rep(i,1,N)
+    {
 
-      lli mi = z-p;
-      lli mi2 = mi;
-       // cout << "   "<<z-p;
-      rep(i,2,d-2)
-      {
-        if(s[i]=='A')
+        if(prime(i))
         {
-          if((s[i-1]=='P'||s[i-2]=='P')&&(s[i+1]=='P'||s[i+2]=='P'))        
-          {
-              mi2--;
-          }
-        }
-      }
 
-      if(mi2<=0)
-        cout<< max(mi,c);
-      else cout << -1;
-      nl;;
-     }  
-    
+            v.pb(i);
+        }
+    }
+    cout << v[10000] << '\n';
+
+    // lli n;
+    // cin>>n;
+    // rep(i,0,n)
+    // {
+
+    //     cout<<v[i]<<" ";
+    // }
+    // nl;;
     return 0;
 }

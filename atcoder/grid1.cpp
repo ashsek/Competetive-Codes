@@ -19,7 +19,7 @@ using namespace std;
 #define S       string
 #define C       char
 #define elif    else if
-
+ 
 #define pb      push_back
 #define pp      pop_back
 #define plli    pair<lli,lli>
@@ -39,6 +39,7 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+const int N = 1e5+5;
 
 int main()
 {
@@ -47,6 +48,40 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+	lli h,w;
+	cin >> h >> w;
+	char ar[h][w];
+	lli dp[h][w]; // to store the number of different paths.
+
+	for (int i = 0; i < h; ++i)
+	{
+		for (int j = 0; j < w; ++j)
+		{
+			char x;
+			cin >> x;
+			ar[i][j] = x;
+		}
+	}
+
+	// Approach:
+
+	/*
+	1. Continue along a path untill i == h and j == w;
+	2. if alternate paths then add, or take a dp table keep one state same while changing other states,
+	3. 
+	*/
+
+	// cout << "\n-----\n";
+	// for (int i = 0; i < h; ++i)
+	// {
+	// 	for (int j = 0; j < w; ++j)
+	// 	{
+	// 		// char x;
+	// 		// cin >> x;
+	// 		cout << ar[i][j];
+	// 	}
+	// 	cout << '\n';
+	// }
 
        
     

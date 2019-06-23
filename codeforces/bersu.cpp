@@ -47,7 +47,37 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; ++i)
+     {
+     	cin >> a[i];
+     } 
+    int m;
+    cin >> m;
+    int b[m];
+    for (int i = 0; i < m; ++i)
+    {
+    	cin >> b[i];
+    }
+    sort(a,a+n);
+    sort(b,b+m);
+    int result=0;
+    for (int i = 0; i < n; ++i)
+    {
+    	for (int j = 0; j < m; ++j)
+    	{
+    		/* code */
+    		if(abs(a[i]-b[j]) <= 1)
+    		{
+    			b[j] = 99999;
+    			result++;
+    			break;
+    		}
+    	}
+    }
+    cout << result << '\n';
        
     
     return 0;

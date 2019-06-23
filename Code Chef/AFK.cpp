@@ -19,7 +19,7 @@ using namespace std;
 #define S       string
 #define C       char
 #define elif    else if
-
+ 
 #define pb      push_back
 #define pp      pop_back
 #define plli    pair<lli,lli>
@@ -39,6 +39,7 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+const int N = 1e5+5;
 
 int main()
 {
@@ -47,8 +48,14 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
-       
+    lli t;
+    cin >> t;
+    while(t--){
+       lli a[3];
+       cin >> a[0] >> a[1] >> a[2];
+       sort(a,a+3);
+       cout << 2*(a[1]) - (a[2] + a[0]) << '\n';
     
-    return 0;
+    // return 0;
+    }
 }

@@ -19,7 +19,7 @@ using namespace std;
 #define S       string
 #define C       char
 #define elif    else if
-
+ 
 #define pb      push_back
 #define pp      pop_back
 #define plli    pair<lli,lli>
@@ -39,15 +39,39 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+const int N = 1e5+5;
 
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    // freopen("input.txt", "r", stdin); // redirects standard input
-	// freopen("output.txt", "w", stdout); // redirects standard output
-
+	 //    
+    lli t;
+    cin >> t;
+    while(t--){
+    		lli n, m;
+    		cin >> n >> m;
+    		lli p[n];
+    		for (int i = 0; i < n; ++i)
+    		{
+    			cin >> p[i];
+    		}
+    		sort(p,p+n,greater<lli>());
+    		lli co=0;
+    		lli j =0;
+    		int flag = 0;
+    		while(j<m){
+    			if (co >= n) {
+    				flag = 1;
+    				break;
+    			}
+    			j += p[co];
+    			co++;
+    		}
+    		if(flag) cout << -1 << '\n';
+    		else cout << co << '\n';
+    }
        
     
     return 0;
