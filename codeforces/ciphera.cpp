@@ -49,8 +49,15 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+    lli k,l;
+    cin >> k >> l;
 
-       
-    
+    lli z = log(l)/log(k);
+
+    if(pow(k,z) == l){
+    	cout << "YES\n";
+    	cout << z-1 <<endl;
+    }
+    else cout << "NO\n";
     return 0;
 }

@@ -49,7 +49,9 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
+    lli n,m;
+    cin >> n >> m;
+    cout << (n*m)/2 << endl;
        
     
     return 0;

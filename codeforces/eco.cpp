@@ -49,7 +49,28 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
+    lli n;
+    cin >> n;
+    const lli j = 1234567, k = 123456, l = 1234,z=0;
+    int flag = 0;
+    for (int i = 0; i <= max(n/j,z); ++i)
+    {
+    	for (int q = 0; q <= max(n/k,z); ++q)
+    	{
+    			lli p;
+    		// for (int p = 0; p <= max(n/l,z) ; ++p)
+    		// {
+    			p = abs((n - i*j - q*k)/l);
+    			if(p*l + i*j + q*k == n){ flag = 1;
+    			// watch(p);
+    				break;
+    			}
+    			// break;}
+    		// }
+    	}
+    }
+    if(flag) cout << "YES\n";
+    else cout << "NO\n";
        
     
     return 0;

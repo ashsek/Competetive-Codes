@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-// #include <boost/multiprecision/cpp_int.hpp>
-// using boost::multiprecision::cpp_int;
+#include <boost/multiprecision/cpp_int.hpp>
+using boost::multiprecision::cpp_int;
 
 using namespace std;
 
@@ -41,6 +41,9 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+lli check(lli v, lli k){
+	return v*k
+}
 
 int main()
 {
@@ -49,6 +52,8 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+    lli n,k;
+    cin >> n >> k;
 
        
     

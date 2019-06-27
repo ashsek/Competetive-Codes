@@ -49,8 +49,56 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
-       
+    lli n;
+    cin >> n;
+    lli a[n+1];
+    lli b[n];
+    // memset(a,0,(n+1)*sizeof(lli));
+    for (int i = 0; i < n+1; ++i)
+    {
+    	a[i] = 0;
+    }
+    for (int i = 0; i < n; ++i)
+       {
+       		lli k;
+       		cin >> k;
+       		if(k <= n)
+       			a[k] = 1;
+       		b[i] = k;
+       }
     
+    queue<lli> q;
+    for (int i = 1; i < n+1; ++i)
+    {
+    	if(!a[i]) q.push(i);
+    }
+    lli d[n+1];
+    for (int i = 0; i < n+1; ++i)
+    {
+    	d[i] = 0;
+    }
+    for (int i = 0; i < n; ++i)
+    {
+    	if(b[i] <= n){
+    		if(d[b[i]] == 0) d[b[i]] = 1;
+    		else{
+    			    		b[i] = q.front();
+    		q.pop();
+    		d[b[i]] = 1;
+    		}
+
+    	}
+    	else{	
+    		b[i] = q.front();
+    		q.pop();
+    		d[b[i]] = 1;
+    	}
+    }
+    for (int i = 0; i < n; ++i)
+    {
+    	cout << b[i] << ' ';
+    }
+cout << endl;
+
     return 0;
 }

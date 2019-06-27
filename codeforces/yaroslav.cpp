@@ -49,6 +49,33 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+    int n;
+    cin >> n;
+    int a[n];
+    int b[1001];
+    memset(b,0,(1000+1)*sizeof(int));
+    for (int i = 0; i < n; ++i)
+    {
+    	cin >> a[i];
+    	b[a[i]]++;
+    }
+    // sort(b,b+n+1, greater<int>());
+    int k = *max_element(b,b+1000+1);
+    bool f = false;
+    if(n%2==0) {
+    	if (k <= n/2)
+    	{
+    		/* code */
+    		// watch(k);
+    		f = true;
+    	}
+    }
+    else{
+    	if(k <= (n+1)/2) f = true;
+    }
+    if(f) cout << "YES\n";
+    else cout << "NO\n";
+
 
        
     

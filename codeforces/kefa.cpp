@@ -49,8 +49,30 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
-       
+    lli n;
+    cin >> n;
+    lli a[n];
+    for (int i = 0; i < n; ++i)
+    {
+    	lli b;
+    	cin >> b;
+    	a[i] = b;
+    }
+    lli dp[n];
+    for (int i = 0; i < n; ++i)
+    {
+    	dp[i] = 1;
+    }
+    // memset(dp,1,n);
+    for (int i = 1; i < n; ++i)
+    {
+    	if (a[i] >= a[i-1])
+    	{
+    		dp[i] = dp[i-1]+1;
+    	}
+    }
+    // cout << dp[0];
+    cout << *max_element(dp,dp+n) << endl;
     
     return 0;
 }

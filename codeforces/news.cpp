@@ -41,6 +41,23 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+const int N = 5e5+5;
+vector<lli> v[N];
+
+int visited[N];
+
+lli cu = 0;
+
+void dfs(int u){
+	if(visited[u] == 1) return;
+	visited[u] = 1;
+	// watch(u);
+	cu++;
+	for (int i = 0; i < v[u].size(); ++i)
+	{
+		dfs(v[u][i]);
+	}
+}
 
 int main()
 {
@@ -49,7 +66,35 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
+    lli n,m;
+    cin >> n >> m;
+    for (int i = 0; i < m; ++i)
+    {
+    	lli k;
+    	cin >> k;
+    	if(k>=1){
+    		lli pare;
+    		cin >> pare;
+    	// watch(pare);
+    	for(int j=0; j <k-1;j++){
+    		lli w2;
+    		cin >> w2;
+    		v[pare].push_back(w2);
+    		v[w2].push_back(pare);
+    	}}
+    	
+    }
+    for (int i = 1; i < n+1; ++i)
+    	{
+    		dfs(i);
+    		for (int i = 0; i < n+1; ++i)
+    		{
+    			visited[i] = 0;
+    		}
+    		cout << cu << ' ';
+    		cu = 0;
+    		// break;
+    	}
        
     
     return 0;

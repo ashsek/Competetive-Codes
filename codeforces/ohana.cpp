@@ -49,8 +49,19 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
-       
+    lli n;
+    cin >> n;
+    map<string, lli> m;
+    lli ans = 0;
+    for (int i = 0; i < n; ++i)
+    {
+    	string k;
+    	cin >> k;
+    	if(m[k]) m[k]++;
+    	else m[k] = 1;
+    	ans = max(ans,m[k]);
+    }
+    cout << ans << endl;
     
     return 0;
 }

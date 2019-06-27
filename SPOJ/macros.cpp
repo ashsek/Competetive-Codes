@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-// #include <boost/multiprecision/cpp_int.hpp>
-// using boost::multiprecision::cpp_int;
+#include <boost/multiprecision/cpp_int.hpp>
+using boost::multiprecision::cpp_int;
 
 using namespace std;
 
@@ -21,7 +21,7 @@ using namespace std;
 #define S       string
 #define C       char
 #define elif    else if
-
+ 
 #define pb      push_back
 #define pp      pop_back
 #define plli    pair<lli,lli>
@@ -41,6 +41,7 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+const int N = 1e5+5;
 
 int main()
 {

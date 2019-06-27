@@ -49,7 +49,31 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+    string s;
+    cin >> s;
+    int l = s.length();
+    int mi = l/2 - 1;
+   	int ar[2] = {1,1};
+   	// string s2;
+   	if(l > 1){
+   	 string s2(1,s[mi]);
 
+    for (int i = 0; i < l; ++i)
+    {
+    	if(i%2 == 0){
+    		if(mi+ar[0] < l)
+    			s2 += s[mi+ar[0]];
+    			ar[0]++;
+    	}
+    	else{
+    		if(mi-ar[1] >= 0)
+    			s2 += s[mi-ar[1]];
+    			ar[1]++;
+    	}
+    }
+cout << s2 << endl;}
+    else{string s2 = s;cout << s2 << endl;}
+    
        
     
     return 0;

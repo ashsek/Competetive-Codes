@@ -49,8 +49,14 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
-       
+    lli n;
+    cin >> n;
+    for (int i = 0; i < n; ++i)
+    {
+    	lli k,n2;
+    	cin >> k >> n2;
+    	cout << n2 + (k-1)*9 << endl;
+    }
     
     return 0;
 }

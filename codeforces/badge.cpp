@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-// #include <boost/multiprecision/cpp_int.hpp>
-// using boost::multiprecision::cpp_int;
 
 using namespace std;
 
@@ -41,6 +39,27 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+const int N = 1e5+5;
+
+vector<int> v[N];
+int visited[N] = {0};
+
+int ans=-1;
+
+void dfs(int u){
+	// watch(u);
+	if (visited[u] == 1){
+		ans= u;
+	 return;
+	}
+	visited[u] = 1;
+	// for (int i = 0; i < v[u].size(); ++i)
+	// {
+	// watch(u);
+		// watch(v[u][0]);
+		dfs(v[u][0]);
+	// }
+}
 
 int main()
 {
@@ -49,8 +68,24 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; ++i)
+    {
+    	int k;
+    	cin >> k;
+    	v[i+1].push_back(k);
+    }
        
-    
+    for (int i = 1; i <= n; ++i)
+    {
+    	memset(visited, 0, sizeof visited);
+    	ans = -1;
+    	dfs(i);
+    	cout << ans << ' ';
+    	// memset(visited, 0, sizeof visited);
+    }
+
+    cout << endl;
     return 0;
 }

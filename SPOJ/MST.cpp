@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-// #include <boost/multiprecision/cpp_int.hpp>
-// using boost::multiprecision::cpp_int;
+#include <boost/multiprecision/cpp_int.hpp>
+using boost::multiprecision::cpp_int;
 
 using namespace std;
 
@@ -21,7 +21,7 @@ using namespace std;
 #define S       string
 #define C       char
 #define elif    else if
-
+ 
 #define pb      push_back
 #define pp      pop_back
 #define plli    pair<lli,lli>
@@ -41,7 +41,8 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
-
+const lli N = 3e5+5;
+vector<lli> v[N];
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -49,6 +50,29 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+    lli n, m;
+    cin >> n >> m;
+    for (int i = 0; i < m; ++i)
+    {
+    	lli a,b;
+    	cin >> a >>b;
+    	v[a].push_back(b);
+    	v[b].push_back(a);
+    }
+    int flag = 0;
+    for (int i = 0; i < m; ++i)
+    {
+    	for (int j = 0; j < m; ++j)
+    	{
+    		if(i != j && v[i].size() + v[j].size() == m) {
+    			cout << i << ' '<<j << endl;
+    			flag = 1;
+    			break;
+    		}
+    	}
+    }
+    if (flag) cout << "YES\n";
+    else cout << "NO\n";
 
        
     
