@@ -49,25 +49,14 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
+    int t;
+    cin >> t;
     lli n,k;
     cin >> n >> k;
-    lli a[n];
-    for (int i = 0; i < n; ++i)
-    {
-    	cin >> a[i];
-    }
-    if(k>1){
-    	if(k == 2) {
-    		cout << max(a[0],a[n-1]);
-    		cout << endl;
-    		return 0;
-    	}
-    	cout << *max_element(a,a+n);
-    }
-    else{
-    	cout << *min_element(a,a+n);
-    }
-    cout << endl;
+    lli q = n/k;
+    lli dif = n - q*k;
+    cout << dif +1 << endl;
+       
     
     return 0;
 }

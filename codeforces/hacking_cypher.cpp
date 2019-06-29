@@ -41,6 +41,14 @@ using namespace std;
 #define max3 1000000007 //10^9 + 7
 #define inf  1000000009 //10^9 + 9
 
+int check(string s, string s2, lli a, lli b){
+	lli x1 = atoi(s.c_str());
+	lli x2 = atoi(s2.c_str());
+	watch(x1);
+	watch(x2);
+	if(x1%a == 0 && x2%b == 0) return 1;
+	return 0;
+}
 
 int main()
 {
@@ -49,25 +57,26 @@ int main()
     cout.tie(NULL);
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
-    lli n,k;
-    cin >> n >> k;
-    lli a[n];
-    for (int i = 0; i < n; ++i)
+    string s;
+    cin >> s;
+    lli a, b;
+    cin >> a >> b;
+    for (int i = 0; i < s.length()-1; ++i)
     {
-    	cin >> a[i];
-    }
-    if(k>1){
-    	if(k == 2) {
-    		cout << max(a[0],a[n-1]);
-    		cout << endl;
-    		return 0;
+    	if(s[i+1] != '0'){
+    		// cout << s.substr(0,i) << endl;
+    		watch(s.substr(0,i+1));
+    		watch(s.substr(i+1,s.length()+1));
+    		if(check(s.substr(0,i+1),s.substr(i+1,s.length()+1),a,b)){
+    			cout << "YES\n";
+    			cout << s.substr(0,i+1) << '\n' << s.substr(i+1,s.length()+1);
+    			cout << endl;
+    			return 0;
+    		}
     	}
-    	cout << *max_element(a,a+n);
     }
-    else{
-    	cout << *min_element(a,a+n);
-    }
-    cout << endl;
+    cout << "NO\n";
+       
     
     return 0;
 }
