@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-#include <boost/multiprecision/cpp_int.hpp>
-using boost::multiprecision::cpp_int;
+// #include <boost/multiprecision/cpp_int.hpp>
+// using boost::multiprecision::cpp_int;
 
 using namespace std;
 
@@ -43,11 +43,14 @@ using namespace std;
 
 const int N = 1e5+5;
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
+void fastio(){
+	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+}
+int main()
+{
+	fastio();
     // freopen("input.txt", "r", stdin); // redirects standard input
 	// freopen("output.txt", "w", stdout); // redirects standard output
 
